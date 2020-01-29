@@ -1,0 +1,5 @@
+ws1-swagger-codegen/assets/server/node_modules/
+*.jar
+ws2-secure-backend/assets/server-http/node_modules/
+ws2-secure-backend/assets/server-https/node_modules/
+ws2-secure-backend/assets/server-https-solution/node_modules/

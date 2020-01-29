@@ -1,0 +1,1 @@
+# sed -i -e 's/NOT_IMPLEMENTED/OK/g' ./server/springboot/src/main/java/io/swagger/api/PetsApiController.java

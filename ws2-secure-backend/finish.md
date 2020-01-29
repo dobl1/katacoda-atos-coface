@@ -1,0 +1,1 @@
+![Coface Logo](assets/Coface.png "Coface Logo")

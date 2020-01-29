@@ -1,0 +1,42 @@
+{
+  "title": "Coface - WS2 Lab#1",
+  "description": "Secure a backend with https using Let's encrypt",
+  "difficulty": "Easy",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Certbot",
+        "text": "step1.md"
+      },
+      {
+        "title": "Certificat SSL/TLS",
+        "text": "step2.md"
+      },
+      {
+        "title": "NodeJS HTTPS",
+        "text": "step3.md"
+      },
+      {
+        "title": "Lancer le serveur",
+        "text": "step4.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "courseData": "env-init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "hidefinish": true,
+    "showdashboard": false,
+    "dashboard": "Dashboard",
+    "uilayout": "editor-terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

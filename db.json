@@ -1,0 +1,31 @@
+{
+    "cities": [
+        {
+            "name": "Paris",
+            "lat": 48.902803,
+            "long": 2.372743
+        },
+        {
+            "name": "Nice",
+            "lat": 43.626302,
+            "long": 7.043105
+        }
+    ],
+    "temperatures": [
+        {
+            "value": 28.9,
+            "date": "2019-08-21T12:50:00.000Z",
+            "cityName": "Nice"
+        },
+        {
+            "value": 23.8,
+            "date": "2019-08-21T12:50:00.000Z",
+            "cityName": "Paris"
+        },
+        {
+            "value": 24.4,
+            "date": "2019-08-21T12:55:00.000Z",
+            "cityName": "Paris"
+        }
+    ]
+}

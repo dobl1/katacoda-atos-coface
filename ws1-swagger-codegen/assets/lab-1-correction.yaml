@@ -1,0 +1,170 @@
+openapi: 3.0.1
+info:
+  title: Weather API - Coface Training
+  description: Weather REST API definition with examples
+  contact:
+    name: Emmanuel GILLET
+    email: emmanuel.gillet.ext@Coface.com
+  version: 0.1.2
+servers:
+  - url: http://my-json-server.typicode.com/Radionz/katacoda-atos-Coface
+  - url: https://my-json-server.typicode.com/Radionz/katacoda-atos-Coface
+paths:
+  /cities:
+    get:
+      tags:
+        - city
+      summary: List all cities
+      description: Get an array of all the `cities` entities.
+      operationId: getAllCities
+      responses:
+        200:
+          description: Successful response - returns an array of `cities` entities.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/City'
+              example:
+                - name: Paris
+                  lat: 48.902803
+                  long: 2.372743
+                - name: Nice
+                  lat: 43.626302
+                  long: 7.043105
+        500:
+          description: Error response - internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - city
+      summary: Create a new City
+      description: Create a single `city` entity.
+      operationId: createCity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/City'
+        required: true
+      responses:
+        201:
+          description: Successful response - Create a single `city` entity.
+          content:
+            application/json:
+              schema:
+                type: object
+        500:
+          description: Error response - internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /temperatures:
+    get:
+      tags:
+        - temperature
+      summary: Get list of temperatures
+      description: Get an array of all the `temperatures` entities.
+      operationId: getAllTemperatures
+      responses:
+        200:
+          description: Successful response - returns an array of `temperatures` entities.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    $ref: '#/components/schemas/Temperature'
+        500:
+          description: Error response - internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+        - temperature
+      summary: Create a new temperature
+      description: Create a single `temperature` entity.
+      operationId: createTemperature
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Temperature'
+        required: true
+      responses:
+        201:
+          description: Successful response - Create a single `temperature` entity.
+          content:
+            application/json:
+              schema:
+                type: object
+        500:
+          description: Error response - internal server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    City:
+      type: object
+      required:
+        - name
+        - lat
+        - long
+      properties:
+        name:
+          type: string
+        lat:
+          type: number
+          format: double
+        long:
+          type: number
+          format: double
+      description: Describe a temperature with with its location (latitude & longitude).
+      example:
+        name: Paris
+        lat: 48.902803
+        long: 2.372743
+    Temperature:
+      type: object
+      required:
+        - value
+        - date
+        - cityName
+      properties:
+        value:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        cityName:
+          type: string
+      description: Describe a temperature located in a city.
+      example:
+        value: 28.9
+        date: 2019-08-21T12:50:00
+        cityName: Nice
+    Error:
+      type: object
+      required:
+        - errorCode
+      properties:
+        errorCode:
+          type: string
+          description: Error code.
+        description:
+          type: string
+          description: Error description.
+      description: Standard error structure.
+      example:
+        errorCode: 500
+        description: "Internal Server Error"
