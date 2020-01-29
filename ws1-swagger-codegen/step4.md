@@ -9,6 +9,6 @@
 
 * Tester la récupération de la liste des Températures avec un appel sur /temperatures sur l'API du serveur développé précedement par l'équipe Atos en plusieurs heures.
 
-`http https://my-json-server.typicode.com/Radionz/katacoda-atos-Coface/temperatures`{{execute T2}}
+`http https://my-json-server.typicode.com/dobl1/katacoda-atos-Coface/temperatures`{{execute T2}}
 
 > Générer du code à partir de la spécification Swagger / OpenAPI est une des grandes valeurs ajoutées de l'approche Design-First.
